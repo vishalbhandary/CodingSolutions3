@@ -30,6 +30,23 @@ public class Set1 {
         return true;
     }
 
+    public boolean isPalindrome(String input) {
+        int left = 0, right = input.length() - 1;
+        while (left < right) {
+            if (input.charAt(left) != input.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
     public static void main(String[] args) {
         Set1 set1 = new Set1();
         String original = "Hello, World!";
@@ -47,6 +64,21 @@ public class Set1 {
         int[] testNumbers = {1, 2, 18, 19, 20};
         for (int num : testNumbers) {
             System.out.println("Is " + num + " a prime number? " + set1.isPrime(num));
+        }
+
+        System.out.println(" Java Program to find whether a string or number is palindrome or not");
+        Set1 checker = new Set1();
+        String[] testStrings = {"racecar", "hello", "level", "world", "madam"};
+        for (String str : testStrings) {
+            System.out.println("Is \"" + str + "\" a palindrome? " + checker.isPalindrome(str));
+        }
+
+        System.out.println("Java Program for the Fibonacci series in recursion.");
+        Set1 calculator = new Set1();
+        int n = 10;
+        System.out.println("Fibonacci sequence up to " + n + ":");
+        for (int i = 0; i <= n; i++) {
+            System.out.print(calculator.fibonacci(i) + " ");
         }
 
     }
