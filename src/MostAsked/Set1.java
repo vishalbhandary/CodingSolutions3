@@ -1,7 +1,5 @@
 package MostAsked;
 
-
-
 public class Set1 {
     public String reverseString(String input) {
         char[] chars = input.toCharArray();
@@ -22,8 +20,15 @@ public class Set1 {
         System.out.println("After swap: a = " + a + ", b = " + b);
     }
 
-
-
+    public boolean isPrime(int num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 == 0 || num % 3 == 0) return false;
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) return false;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         Set1 set1 = new Set1();
@@ -38,7 +43,11 @@ public class Set1 {
         int b = 5;
         set1.swapNumbers(a,b);
 
-
+        System.out.println("Java Program to find whether a number is prime or not in the most efficient way");
+        int[] testNumbers = {1, 2, 18, 19, 20};
+        for (int num : testNumbers) {
+            System.out.println("Is " + num + " a prime number? " + set1.isPrime(num));
+        }
 
     }
 
